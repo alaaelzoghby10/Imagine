@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/script/jquery.js"></script>
+    <script src="~/script/bootstrap.js"></script>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+
+
+    
+    <style>
+        body {
+            direction: rtl;
+        }
+
+      
+    </style>
+   
+</head>
+<body>
+
+
+    <div class="jumbotron text-center container" style="margin-bottom:0">
+        <a href="/news/index"><h1 style="font-family:Tahoma">اخبارنا</h1></a>
+        <h3>اخبار حصرية و عاجلة </h3>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark container" style="font-weight:bold;font-size:large" id="nave">
+        <a class="navbar-brand" href="/news/index">اخبارنا</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/news/index" >الرئيسية</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/news/index/عاجل">عاجل</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news/index/رياضة">رياضة</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news/index/سياسة">سياسة</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news/index/اقتصاد">اقتصاد</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news/index/منوعات">منوعات</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/news/index/فن">فن</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news/index/مقالات">مقالات</a>
+                </li>
+
+              
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/news/contact">اتصل بنا</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <div class="jumbotron text-center container" style="margin-bottom:0;margin-top:10px;">
+        <p style="font-size:25px;font-family:Tahoma">جميع الحقوق محفوظة لموقع اخبارنا - 2019 </p>
+        <p >Designed and developed by <a href="https://www.linkedin.com/in/alaa-elzoghby-32850a159" target="_blank">Alaa Elzoghby</a> </p>
+
+    </div>
+
+    <script src="~/js/jquery.validate.js"></script>
+    <script src="~/js/jquery.validate.unobtrusive.js"></script>
+
+
+    
+</body>
+
+</html>

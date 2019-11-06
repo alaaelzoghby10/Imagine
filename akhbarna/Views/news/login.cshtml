@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container" style="font-family:Tahoma;font-size:large;text-align:right;margin-top:40px">
+    <form class="form" method="post" action="/news/login">
+        <label for="email" class="mr-sm-2">البريد الإلكتروني</label>
+        <input name="male" type="email" class="form-control mb-2" id="email" required>
+        <label for="pwd" class="mr-sm-2">كلمة السر </label>
+        <input name="password" type="password" class="form-control mb-2" id="pwd" required>
+        
+        <button type="submit" class="btn btn-primary mb-2">تسجيل الدخول</button>
+    </form>
+    <span style="color:red">@Html.Raw(ViewBag.message)</span><br /><br />
+</div>

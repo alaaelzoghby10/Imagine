@@ -1,0 +1,50 @@
+﻿@model akhbarna.Models.news
+@{
+    ViewBag.Title = "details";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container" style="text-align:right">
+    <a href="/news/index/@Model.category"><span style="font-weight:bold;background-color:gold;font-size:40px;color:black;margin:80px 0px;">@Model.category</span> </a>
+    <h1 style="text-align:right;margin:40px 0px;margin-top:0px;font-weight:bold">@Model.title</h1>
+    <img class="img-fluid" src="~/images/@Url.Content(@Model.image)" style="margin-bottom:40px;" />
+    <p style="text-align:right;font-size:large;font-family:Tahoma;line-height:40px;font-weight:bold;">@Model.details</p>
+
+    <h1 style="text-align:right;margin:30px 0px;font-weight:bold"> تعليقات الزوار </h1>
+    
+    @foreach (var item in Model.comments)
+    {
+        if(item.news_id==@item.news.id)
+        {
+            <label style="font-weight:bold">@item.owner</label><br />
+            <label>@item.details</label> <br />
+        if (Session["admin"] != null)
+            {
+                <a href="/comment/delete/@item.id">حذف التعليق</a>
+            }
+            <hr />
+        }
+          
+    }
+
+    <h1 style="text-align:right;margin:30px 0px;font-weight:bold">أضف تعليق</h1>
+    <div class="container" style="font-family:Tahoma;font-size:large;text-align:right">
+        <form class="form" method="get" action="/comment/add">
+            <label for="name" class="mr-sm-2">الاسم</label>
+            <input name="owner" class="form-control mb-2 " id="email" required>
+
+            <label for="mail" class="mr-sm-2">البريد الإلكتروني</label>
+            <input name="mail" class="form-control mb-2 " type="email" required>
+
+            <label for="comment" class="mr-sm-2">التعليق</label>
+            <textarea name="details" class="form-control mb-2" required></textarea>
+
+            <input hidden type="text" name="newsid" value="@ViewBag.id" />
+
+            <button type="submit" class="btn btn-primary mb-2">اضف تعليق</button>
+
+            
+        </form>
+    </div>
+
+</div>

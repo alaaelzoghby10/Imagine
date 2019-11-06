@@ -1,0 +1,51 @@
+﻿@model akhbarna.Models.news
+@{
+    ViewBag.Title = "اضافة خبر جديد";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<div class="container" style="font-family:Tahoma;font-size:large;text-align:right">
+    <form class="form" method="post" action="/news/add" enctype="multipart/form-data">
+        <div class="form-group">
+            <p class="mr-sm-2" style="font-weight:bold;font-size:large;margin-top:40px">@Html.DisplayNameFor(m => m.title)</p>
+            @Html.TextBoxFor(m => m.title, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.title, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <label for="title" class="mr-sm-2" style="font-weight:bold;font-size:large;margin-top:20px">الفئة </label>
+            <select name="category" class="form-control" style="font-weight:bold;margin-bottom:20px;direction:rtl" required>
+                <option value=""></option>
+                <option value="رياضة">رياضة</option>
+                <option value="عاجل">عاجل</option>
+                <option value="سياسة">سياسة</option>
+                <option value="رياضة">اقتصاد</option>
+                <option value="منوعات">منوعات</option>
+                <option value="فن">فن</option>
+                <option value="مقالات">مقالات</option>
+            </select>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <p class="mr-sm-2" style="font-weight:bold;font-size:large;margin-top:40px">@Html.DisplayNameFor(m => m.details)</p>
+            @Html.TextAreaFor(m => m.details, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.details, "", new { @class = "text-danger" })
+        </div>
+
+        
+
+        <div class="form-group">
+            <p class="mr-sm-2" style="font-weight:bold;font-size:large;margin-top:40px">@Html.DisplayNameFor(m => m.imagelink)</p>
+            @Html.TextBoxFor(m => m.imagelink, new {type="file", @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.imagelink, "", new { @class = "text-danger" })
+        </div>
+
+     
+
+        <button type="submit" class="btn btn-primary mb-2">أضف الخبر</button>
+    </form>
+</div>
